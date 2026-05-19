@@ -71,7 +71,30 @@ img { max-width: 100%; height: auto; display: block; }
 section { padding: 4rem 0; }
 section.alt { background: var(--bg-alt); }
 
-.section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; }
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin-top: 0.75rem;
+}
 .section-lead { color: var(--text-muted); margin-bottom: 2rem; max-width: 720px; }
 
 /* Hero */
@@ -85,6 +108,33 @@ section.alt { background: var(--bg-alt); }
 .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.25rem; }
 .hero .subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; font-style: italic; }
 .hero .tagline { font-size: 1.4rem; max-width: 640px; margin: 0 auto 2rem; }
+
+/* Trust strip */
+.trust-strip {
+  padding: 1.5rem 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.trust-strip ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.trust-strip li { display: flex; align-items: center; gap: 0.5rem; }
+.trust-strip li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
 
 /* Triage cards */
 .cards {
@@ -103,6 +153,22 @@ section.alt { background: var(--bg-alt); }
 .card.green { border-left-color: var(--green); }
 .card.yellow { border-left-color: var(--yellow); }
 .card.red { border-left-color: var(--red); }
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.card.green .card-icon { background: var(--green); }
+.card.yellow .card-icon { background: var(--yellow); }
+.card.red .card-icon { background: var(--red); }
 .card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
 .card.green h3 { color: var(--green); }
 .card.yellow h3 { color: var(--yellow); }
